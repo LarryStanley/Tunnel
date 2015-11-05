@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12F562DC9E72E2D9FB29CB6E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D8FE226072E26A3F405443 /* libPods.a */; };
+		482F0E4D1BEA557300A0FDA3 /* GetDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 482F0E4C1BEA557300A0FDA3 /* GetDataController.m */; settings = {ASSET_TAGS = (); }; };
+		482F0E4F1BEA682B00A0FDA3 /* direction202.png in Resources */ = {isa = PBXBuildFile; fileRef = 482F0E4E1BEA682B00A0FDA3 /* direction202.png */; settings = {ASSET_TAGS = (); }; };
 		48D9AED81BD7721D0020A9A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9AED71BD7721D0020A9A2 /* main.m */; };
 		48D9AEDB1BD7721D0020A9A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9AEDA1BD7721D0020A9A2 /* AppDelegate.m */; };
 		48D9AEDE1BD7721D0020A9A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D9AEDD1BD7721D0020A9A2 /* ViewController.m */; };
@@ -37,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		47D8FE226072E26A3F405443 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		482F0E4B1BEA557300A0FDA3 /* GetDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetDataController.h; path = GetDataController/GetDataController.h; sourceTree = "<group>"; };
+		482F0E4C1BEA557300A0FDA3 /* GetDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetDataController.m; path = GetDataController/GetDataController.m; sourceTree = "<group>"; };
+		482F0E4E1BEA682B00A0FDA3 /* direction202.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction202.png; sourceTree = "<group>"; };
 		48D9AED31BD7721D0020A9A2 /* Tunnel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tunnel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D9AED71BD7721D0020A9A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48D9AED91BD7721D0020A9A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482F0E4A1BEA550400A0FDA3 /* GetDataController */ = {
+			isa = PBXGroup;
+			children = (
+				482F0E4B1BEA557300A0FDA3 /* GetDataController.h */,
+				482F0E4C1BEA557300A0FDA3 /* GetDataController.m */,
+			);
+			name = GetDataController;
+			sourceTree = "<group>";
+		};
 		48D9AECA1BD7721D0020A9A2 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +126,7 @@
 				48D9AEDA1BD7721D0020A9A2 /* AppDelegate.m */,
 				48D9AEDC1BD7721D0020A9A2 /* ViewController.h */,
 				48D9AEDD1BD7721D0020A9A2 /* ViewController.m */,
+				482F0E4A1BEA550400A0FDA3 /* GetDataController */,
 				48D9AEDF1BD7721E0020A9A2 /* Main.storyboard */,
 				48D9AEE21BD7721E0020A9A2 /* Assets.xcassets */,
 				48D9AEE41BD7721E0020A9A2 /* LaunchScreen.storyboard */,
@@ -124,6 +139,7 @@
 		48D9AED61BD7721D0020A9A2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				482F0E4E1BEA682B00A0FDA3 /* direction202.png */,
 				48D9AED71BD7721D0020A9A2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -270,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482F0E4F1BEA682B00A0FDA3 /* direction202.png in Resources */,
 				48D9AEE61BD7721E0020A9A2 /* LaunchScreen.storyboard in Resources */,
 				48D9AEE31BD7721E0020A9A2 /* Assets.xcassets in Resources */,
 				48D9AEE11BD7721E0020A9A2 /* Main.storyboard in Resources */,
@@ -345,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482F0E4D1BEA557300A0FDA3 /* GetDataController.m in Sources */,
 				48D9AEDE1BD7721D0020A9A2 /* ViewController.m in Sources */,
 				48D9AEDB1BD7721D0020A9A2 /* AppDelegate.m in Sources */,
 				48D9AED81BD7721D0020A9A2 /* main.m in Sources */,

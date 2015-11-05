@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GetDataController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIScrollViewDelegate>
 {
-    UIScrollView *scrollView;
+    UIScrollView *mainScrollView;
+    UIPageControl *startPageControl;
+    UIPageControl *destinyPageControl;
+    UITableView *estimateTableView;
 }
 
 @end

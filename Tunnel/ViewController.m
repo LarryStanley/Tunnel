@@ -30,11 +30,109 @@
     [self.view.layer insertSublayer:theViewGradient atIndex:0];
 
     // set scroll view
-    scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:scrollView];
+    mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:mainScrollView];
+    
+    
+    
+    UILabel *estimateTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    estimateTimeLabel.text = @"127";
+    estimateTimeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:72.0f];
+    [estimateTimeLabel sizeToFit];
+    estimateTimeLabel.frame = CGRectMake(self.view.frame.size.width/2 - estimateTimeLabel.frame.size.width/2, 70, estimateTimeLabel.frame.size.width, estimateTimeLabel.frame.size.height);
+    estimateTimeLabel.textColor = [UIColor whiteColor];
+    [mainScrollView addSubview:estimateTimeLabel];
+    
+    UILabel *estimateMinuteLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    estimateMinuteLabel.text = @"分鐘";
+    estimateMinuteLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18.0f];
+    [estimateMinuteLabel sizeToFit];
+    estimateMinuteLabel.frame = CGRectMake(self.view.frame.size.width/2 - estimateMinuteLabel.frame.size.width/2, estimateTimeLabel.frame.size.height + estimateTimeLabel.frame.origin.y - 30, estimateTimeLabel.frame.size.width, estimateTimeLabel.frame.size.height);
+    estimateMinuteLabel.textColor = [UIColor whiteColor];
+    [mainScrollView addSubview:estimateMinuteLabel];
+    
+    // set start and destination
+    NSArray *places = @[@"南港", @"石碇", @"坪林", @"頭城"];
+    UIScrollView *startScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, estimateMinuteLabel.frame.size.height + estimateMinuteLabel.frame.origin.y, self.view.frame.size.width/2, 60)];
+    [startScrollView setPagingEnabled:YES];
+    [startScrollView setShowsHorizontalScrollIndicator:NO];
+    [startScrollView setShowsVerticalScrollIndicator:NO];
+    [startScrollView setScrollsToTop:NO];
+    [startScrollView setDelegate:self];
+    startScrollView.tag = 0;
+    
+    int index = 0;
+    for (NSString *place in places) {
+        UILabel *placeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        placeLabel.text = place;
+        placeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30];
+        [placeLabel sizeToFit];
+        placeLabel.frame = CGRectMake(index * self.view.frame.size.width/2, 0, self.view.frame.size.width/2, placeLabel.frame.size.height);
+        placeLabel.textColor = [UIColor whiteColor];
+        placeLabel.textAlignment = NSTextAlignmentCenter;
+        [startScrollView addSubview:placeLabel];
+        index++;
+    }
+    [startScrollView setContentSize:CGSizeMake( places.count * self.view.frame.size.width/2, 60)];
+    
+    startPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, startScrollView.frame.origin.y + 40, self.view.frame.size.width/2, 10)];
+    [startPageControl setNumberOfPages:places.count];
+    [startPageControl setCurrentPage:0];
+    
+    [mainScrollView addSubview:startScrollView];
+    [mainScrollView addSubview:startPageControl];
+    
+    UIImageView *arrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"direction202.png"]];
+    arrowView.frame = CGRectMake(self.view.frame.size.width/2 - 10, estimateMinuteLabel.frame.size.height + estimateMinuteLabel.frame.origin.y + 5, 20, 20);
+    [mainScrollView addSubview:arrowView];
+    
+    // set start and destination
+    UIScrollView *destinationScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake( self.view.frame.size.width/2, estimateMinuteLabel.frame.size.height + estimateMinuteLabel.frame.origin.y, self.view.frame.size.width/2, 60)];
+    [destinationScrollView setPagingEnabled:YES];
+    [destinationScrollView setShowsHorizontalScrollIndicator:NO];
+    [destinationScrollView setShowsVerticalScrollIndicator:NO];
+    [destinationScrollView setScrollsToTop:NO];
+    [destinationScrollView setDelegate:self];
+    destinationScrollView.tag = 1;
+    
+    destinyPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2, startScrollView.frame.origin.y + 40, self.view.frame.size.width/2, 10)];
+    [destinyPageControl setNumberOfPages:places.count];
+    [destinyPageControl setCurrentPage:0];
+    
+    [mainScrollView addSubview:destinyPageControl];
+    
+    index = 0;
+    for (NSString *place in places) {
+        UILabel *placeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        placeLabel.text = place;
+        placeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:30];
+        [placeLabel sizeToFit];
+        placeLabel.frame = CGRectMake(index * self.view.frame.size.width/2, 0, self.view.frame.size.width/2, placeLabel.frame.size.height);
+        placeLabel.textColor = [UIColor whiteColor];
+        placeLabel.textAlignment = NSTextAlignmentCenter;
+        [destinationScrollView addSubview:placeLabel];
+        index++;
+    }
+    [destinationScrollView setContentSize:CGSizeMake( places.count * self.view.frame.size.width/2, 60)];
+    
+    [mainScrollView addSubview:destinationScrollView];
+
+    UILabel *noteLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    noteLabel.text = @"目前車流擁擠，建議一小時後再出發";
+    noteLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18];
+    [noteLabel sizeToFit];
+    noteLabel.frame = CGRectMake(self.view.frame.size.width/2 - noteLabel.frame.size.width/2, destinationScrollView.frame.size.height + destinationScrollView.frame.origin.y + 5, noteLabel.frame.size.width, noteLabel.frame.size.height);
+    noteLabel.textColor = [UIColor whiteColor];
+    [mainScrollView addSubview:noteLabel];
+
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake( 20, noteLabel.frame.size.height + noteLabel.frame.origin.y + 10, self.view.frame.size.width - 40, 0.5)];
+    line.backgroundColor = [UIColor whiteColor];
+    [mainScrollView addSubview:line];
+    
+    NSArray *predictData = @[@"半小時", @"一小時", @"兩小時", @"三小時"];
     
     // set overal label
-    UILabel *overAllLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    /*UILabel *overAllLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     overAllLabel.text = @"總結";
     overAllLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:26.0f];
     [overAllLabel sizeToFit];
@@ -110,8 +208,23 @@
     [estimateMinuteLabel sizeToFit];
     estimateMinuteLabel.frame = CGRectMake(estimateTimeLabel.frame.size.width + estimateTimeLabel.frame.origin.x + 10, estimateTimeLabel.frame.size.height + estimateTimeLabel.frame.origin.y - estimateMinuteLabel.frame.size.height - 10, estimateMinuteLabel.frame.size.width, estimateMinuteLabel.frame.size.height);
     estimateMinuteLabel.textColor = [UIColor whiteColor];
-    [scrollView addSubview:estimateMinuteLabel];
+    [scrollView addSubview:estimateMinuteLabel];*/
 }
+
+#pragma mark - All about scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+    CGFloat width = scrollView.frame.size.width;
+    NSInteger currentPage = ((scrollView.contentOffset.x - width / 2) / width) + 1;
+
+    if (scrollView.tag) {
+        [destinyPageControl setCurrentPage:currentPage];
+    } else {
+        [startPageControl setCurrentPage:currentPage];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
