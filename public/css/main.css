@@ -1,0 +1,93 @@
+@font-face {
+	font-family: HelveticaNeue;
+	src: url(HelveticaNeue-UltraLight.otf);
+}
+
+html, body {
+	background: rgba(85,108,175,1);
+	background: -moz-linear-gradient(top, rgba(85,108,175,1) 0%, rgba(91,159,202,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(85,108,175,1)), color-stop(100%, rgba(91,159,202,1)));
+	background: -webkit-linear-gradient(top, rgba(85,108,175,1) 0%, rgba(91,159,202,1) 100%);
+	background: -o-linear-gradient(top, rgba(85,108,175,1) 0%, rgba(91,159,202,1) 100%);
+	background: -ms-linear-gradient(top, rgba(85,108,175,1) 0%, rgba(91,159,202,1) 100%);
+	background: linear-gradient(to bottom, rgba(85,108,175,1) 0%, rgba(91,159,202,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#556caf', endColorstr='#5b9fca', GradientType=0 );
+	height: 100%;
+
+	color: white;
+
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Helvetica, Arial, "微軟正黑體", "微软雅黑", "メイリオ", "맑은 고딕", sans-serif;
+}
+
+number {
+	font-size: 64px;
+	color: #FF5722;
+	font-family: HelveticaNeue;
+}
+
+.smallNumber {
+	color: #FF5722;
+}
+
+#info .well {
+	height: 315px;
+	overflow: auto;
+}
+#map {
+	height: 350px;
+}
+
+.speed {
+	margin-bottom: 0px;
+}
+
+.speedUnit {
+	margin-top: 35px;
+}
+
+.well hr {
+	background-color: gray;
+}
+
+#speedColor {
+	background: rgba(244,66,54,1);
+	background: -moz-linear-gradient(left, rgba(244,66,54,1) 0%, rgba(233,30,98,1) 10%, rgba(156,39,176,1) 19%, rgba(104,58,183,1) 28%, rgba(63,81,181,1) 37%, rgba(33,149,243,1) 46%, rgba(3,168,244,1) 54%, rgba(0,187,212,1) 61%, rgba(0,150,135,1) 68%, rgba(76,175,79,1) 76%, rgba(76,175,79,1) 83%, rgba(76,175,79,1) 91%, rgba(76,175,79,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(244,66,54,1)), color-stop(10%, rgba(233,30,98,1)), color-stop(19%, rgba(156,39,176,1)), color-stop(28%, rgba(104,58,183,1)), color-stop(37%, rgba(63,81,181,1)), color-stop(46%, rgba(33,149,243,1)), color-stop(54%, rgba(3,168,244,1)), color-stop(61%, rgba(0,187,212,1)), color-stop(68%, rgba(0,150,135,1)), color-stop(76%, rgba(76,175,79,1)), color-stop(83%, rgba(76,175,79,1)), color-stop(91%, rgba(76,175,79,1)), color-stop(100%, rgba(76,175,79,1)));
+	background: -webkit-linear-gradient(left, rgba(244,66,54,1) 0%, rgba(233,30,98,1) 10%, rgba(156,39,176,1) 19%, rgba(104,58,183,1) 28%, rgba(63,81,181,1) 37%, rgba(33,149,243,1) 46%, rgba(3,168,244,1) 54%, rgba(0,187,212,1) 61%, rgba(0,150,135,1) 68%, rgba(76,175,79,1) 76%, rgba(76,175,79,1) 83%, rgba(76,175,79,1) 91%, rgba(76,175,79,1) 100%);
+	background: -o-linear-gradient(left, rgba(244,66,54,1) 0%, rgba(233,30,98,1) 10%, rgba(156,39,176,1) 19%, rgba(104,58,183,1) 28%, rgba(63,81,181,1) 37%, rgba(33,149,243,1) 46%, rgba(3,168,244,1) 54%, rgba(0,187,212,1) 61%, rgba(0,150,135,1) 68%, rgba(76,175,79,1) 76%, rgba(76,175,79,1) 83%, rgba(76,175,79,1) 91%, rgba(76,175,79,1) 100%);
+	background: -ms-linear-gradient(left, rgba(244,66,54,1) 0%, rgba(233,30,98,1) 10%, rgba(156,39,176,1) 19%, rgba(104,58,183,1) 28%, rgba(63,81,181,1) 37%, rgba(33,149,243,1) 46%, rgba(3,168,244,1) 54%, rgba(0,187,212,1) 61%, rgba(0,150,135,1) 68%, rgba(76,175,79,1) 76%, rgba(76,175,79,1) 83%, rgba(76,175,79,1) 91%, rgba(76,175,79,1) 100%);
+	background: linear-gradient(to right, rgba(244,66,54,1) 0%, rgba(233,30,98,1) 10%, rgba(156,39,176,1) 19%, rgba(104,58,183,1) 28%, rgba(63,81,181,1) 37%, rgba(33,149,243,1) 46%, rgba(3,168,244,1) 54%, rgba(0,187,212,1) 61%, rgba(0,150,135,1) 68%, rgba(76,175,79,1) 76%, rgba(76,175,79,1) 83%, rgba(76,175,79,1) 91%, rgba(76,175,79,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f44236', endColorstr='#4caf4f', GradientType=1 );
+
+	margin-top: 1px;
+
+	height: 10px;
+	width: 100%;
+}
+
+h1 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h2 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h3 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h4 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h5 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
+
+h6 {
+	font-family: "微軟正黑體", "微软雅黑", Helvetica, Arial,"メイリオ", "맑은 고딕", sans-serif !important;
+}
