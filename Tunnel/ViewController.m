@@ -129,7 +129,30 @@
     line.backgroundColor = [UIColor whiteColor];
     [mainScrollView addSubview:line];
     
-    NSArray *predictData = @[@"半小時", @"一小時", @"兩小時", @"三小時"];
+    NSArray *predictData = @[@"半小時\n120", @"一小時\n90", @"兩小時\n115", @"三小時\n110"];
+    index = 0;
+    float predictLabelY = 0;
+    for (NSString *predictString in predictData) {
+        UILabel *predictLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        predictLabel.text = predictString;
+        predictLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18];
+        predictLabel.numberOfLines = 0;
+        [predictLabel sizeToFit];
+        predictLabel.frame = CGRectMake(index * self.view.frame.size.width/4, line.frame.origin.y + line.frame.size.height + 10, self.view.frame.size.width/4, predictLabel.frame.size.height);
+        predictLabel.textColor = [UIColor whiteColor];
+        predictLabel.textAlignment = NSTextAlignmentCenter;
+        [mainScrollView addSubview:predictLabel];
+        index++;
+        predictLabelY = predictLabel.frame.size.height + predictLabel.frame.origin.y;
+    }
+    
+    UILabel *busLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    busLabel.text = @"大眾運輸方案";
+    busLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18];
+    busLabel.textColor = [UIColor whiteColor];
+    [busLabel sizeToFit];
+    busLabel.frame = CGRectMake(self.view.frame.size.width/2 - busLabel.frame.size.width/2, predictLabelY + 30, busLabel.frame.size.width, busLabel.frame.size.height);
+    [mainScrollView addSubview:busLabel];
     
     // set overal label
     /*UILabel *overAllLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
